@@ -1,0 +1,41 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+
+    <head>
+        <div th:replace="~{fragments/header :: head}"></div>
+        <title th:text="${pizza.nome}"></title>
+    </head>
+
+    <body>
+        <nav th:replace="~{fragments/navbar :: navbar('pizze')}"></nav>
+
+        <div class="container" th:object="${pizza}">
+            
+            <h1>La pizza scelta</h1>
+            <hr>
+
+            <div class="row">
+                <div class="col-8">
+                    <dl>
+                        <dt>Nome pizza</dt>
+                        <dd th:text="*{nome}"></dd>
+                    </dl>
+                    <dl>
+                        <dt>Descrizione pizza</dt>
+                        <dd th:text="*{descrizione}"></dd>
+                    </dl>
+                    <dl>
+                        <dt>Prezzo pizza</dt>
+                        <dd th:text="|*{prezzo} €|"></dd>
+                    </dl>
+
+                </div>
+
+            </div>
+
+
+
+
+            <div th:replace="~{fragments/header :: bootstrapScript}"></div>
+        </body>
+    </html>
