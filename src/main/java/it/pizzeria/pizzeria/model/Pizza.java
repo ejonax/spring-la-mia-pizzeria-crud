@@ -26,7 +26,6 @@ public class Pizza {
     private String foto;
 
     @Column(nullable=false)
-   // @NotNull(message = "Il prezzo è obbligatorio")
    // @DecimalMin(value = "0.01", message = "Il prezzo deve essere maggiore di 0")
     private Double prezzo;
 
